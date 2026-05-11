@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Colorado Climbing</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                font-family: Arial, sans-serif;
+            }
+            #header {
+                height: 10%;
+                background-color: #f0f0f0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+            #header img {
+                max-height: 100%;
+                max-width: 100%;
+            }
+            #container {
+                display: flex;
+                height: 90%;
+            }
+            #menu {
+                width: 30%;
+                background-image: url(ex27/images/wall1.webp);
+                overflow-y: auto;
+                padding: 15px;
+                border-right: 2px solid #ccc;
+            }
+            #menu a {
+                display: block;
+                padding: 8px 0;
+                color: #0066cc;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            #menu a:hover {
+                text-decoration: underline;
+                color: #0044aa;
+            }
+            #menu div {
+                margin: 10px 0;
+            }
+            #menu ul {
+                margin-left: 15px;
+                margin-top: 10px;
+            }
+            #menu li {
+                margin: 5px 0;
+            }
+            #content {
+                width: 70%;
+            }
+            iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <img
+                src="ex27/images/LOGO.JPG"
+                width="1450px
+            "
+                alt="Logo"
+            />
+        </div>
+        <div id="container">
+            <div id="menu">
+                <div><a href="About.html">Homepage</a></div>
+                <div>
+                    <a href="ex27/Philosph.html">Our Philosophy</a>
+                </div>
+                <div>
+                    <a href="ex27/Lessons.html">Climbing Lessons</a>
+                </div>
+                <div><a href="ex27/TCE.html">Tours</a></div>
+                <ul type="none">
+                    <li>
+                        <a href="ex27/Grepon.html">Petit Grepon</a>
+                    </li>
+                    <li>
+                        <a href="ex27/Lumpy.html">Lumpy Ride</a>
+                    </li>
+                    <li>
+                        <a href="ex27/NFace.html">North Face</a>
+                    </li>
+                    <li>
+                        <a href="ex27/Kieners.html">Kiener's</a>
+                    </li>
+                    <li>
+                        <a href="ex27/Diamond.html">The Diamond</a>
+                    </li>
+                    <li>
+                        <a href="ex27/Eldorado.html">Eldorado</a>
+                    </li>
+                </ul>
+                <div>
+                    <a href="ex27/Staff.html">Staff</a>
+                </div>
+            </div>
+            <div id="content">
+                <iframe id="main_content" src="ex27/About.html"></iframe>
+            </div>
+        </div>
+        <script>
+            // Xử lý click link để load vào iframe
+            document.querySelectorAll("#menu a").forEach((link) => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    document.getElementById("main_content").src = this.href;
+                });
+            });
+        </script>
+    </body>
+</html>
