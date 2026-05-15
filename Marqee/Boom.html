@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Marquee Square</title>
+    </head>
+    <body
+        style="
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        "
+    >
+        <marquee
+            behavior="alternate"
+            direction="down"
+            scrollamount="3"
+            style="
+                width: 400px;
+                height: 350px;
+                border: 3px solid #333;
+                background: #e0e0e0;
+                overflow: hidden;
+            "
+        >
+            <marquee
+                behavior="alternate"
+                direction="right"
+                scrollamount="3"
+                style="
+                    width: 350px;
+                    height: 350px;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: flex-start;
+                "
+            >
+                <span
+                    style="
+                        display: inline-block;
+                        width: 50px;
+                        height: 50px;
+                        background: #ff6b6b;
+                    "
+                ></span>
+            </marquee>
+        </marquee>
+    </body>
+</html>

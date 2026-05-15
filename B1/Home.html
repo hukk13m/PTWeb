@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="K24411TE Talent - Trang chủ" />
+        <title>K24411TE - Home</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Inter", sans-serif;
+                background: #0a0a0f;
+                color: #e0e0e0;
+                min-height: 100vh;
+                overflow-x: hidden;
+            }
+
+            /* Animated gradient background */
+            .bg-gradient {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+                background:
+                    radial-gradient(
+                        ellipse at 20% 50%,
+                        rgba(120, 80, 255, 0.15) 0%,
+                        transparent 50%
+                    ),
+                    radial-gradient(
+                        ellipse at 80% 20%,
+                        rgba(255, 100, 150, 0.1) 0%,
+                        transparent 50%
+                    ),
+                    radial-gradient(
+                        ellipse at 50% 80%,
+                        rgba(60, 200, 255, 0.1) 0%,
+                        transparent 50%
+                    );
+                animation: bgPulse 8s ease-in-out infinite alternate;
+            }
+
+            @keyframes bgPulse {
+                0% {
+                    opacity: 0.7;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            /* Floating particles */
+            .particles {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+                pointer-events: none;
+            }
+
+            .particle {
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                background: rgba(120, 80, 255, 0.5);
+                border-radius: 50%;
+                animation: float linear infinite;
+            }
+
+            @keyframes float {
+                0% {
+                    transform: translateY(100vh) rotate(0deg);
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 1;
+                }
+                90% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-10vh) rotate(720deg);
+                    opacity: 0;
+                }
+            }
+
+            /* Main content */
+            .container {
+                position: relative;
+                z-index: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                padding: 2rem;
+            }
+
+            /* Glass card */
+            .hero-card {
+                background: rgba(255, 255, 255, 0.03);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 24px;
+                padding: 3rem;
+                max-width: 600px;
+                width: 100%;
+                text-align: center;
+                animation: cardSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                opacity: 0;
+                transform: translateY(40px);
+                box-shadow:
+                    0 20px 60px rgba(0, 0, 0, 0.3),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            }
+
+            @keyframes cardSlideUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Profile image */
+            .profile-wrapper {
+                position: relative;
+                width: 160px;
+                height: 160px;
+                margin: 0 auto 2rem;
+            }
+
+            .profile-ring {
+                position: absolute;
+                top: -6px;
+                left: -6px;
+                width: 172px;
+                height: 172px;
+                border-radius: 50%;
+                background: conic-gradient(
+                    from 0deg,
+                    #7850ff,
+                    #ff6496,
+                    #3cc8ff,
+                    #7850ff
+                );
+                animation: ringRotate 4s linear infinite;
+            }
+
+            @keyframes ringRotate {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .profile-img {
+                position: relative;
+                z-index: 1;
+                width: 160px;
+                height: 160px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 4px solid #0a0a0f;
+                transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+
+            .profile-wrapper:hover .profile-img {
+                transform: scale(1.05);
+            }
+
+            /* Badge */
+            .badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                background: linear-gradient(
+                    135deg,
+                    rgba(255, 100, 150, 0.15),
+                    rgba(120, 80, 255, 0.15)
+                );
+                border: 1px solid rgba(255, 100, 150, 0.2);
+                color: #ff6496;
+                padding: 6px 16px;
+                border-radius: 100px;
+                font-size: 0.8rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                margin-bottom: 1rem;
+                animation: badgePulse 2s ease-in-out infinite;
+            }
+
+            @keyframes badgePulse {
+                0%,
+                100% {
+                    box-shadow: 0 0 0 0 rgba(255, 100, 150, 0.2);
+                }
+                50% {
+                    box-shadow: 0 0 0 8px rgba(255, 100, 150, 0);
+                }
+            }
+
+            .badge::before {
+                content: "";
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: #ff6496;
+                animation: dot 1.5s ease-in-out infinite;
+            }
+
+            @keyframes dot {
+                0%,
+                100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.4;
+                }
+            }
+
+            .title {
+                font-family: "Outfit", sans-serif;
+                font-size: 2.5rem;
+                font-weight: 800;
+                background: linear-gradient(135deg, #ffffff, #a0a0ff, #ff6496);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                margin-bottom: 0.5rem;
+                line-height: 1.2;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+                color: rgba(255, 255, 255, 0.5);
+                font-weight: 300;
+                margin-bottom: 2rem;
+                line-height: 1.6;
+            }
+
+            /* Navigation links */
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-link {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 14px 20px;
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.06);
+                border-radius: 14px;
+                color: #e0e0e0;
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 0.95rem;
+                transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                cursor: pointer;
+            }
+
+            .nav-link:hover {
+                background: rgba(120, 80, 255, 0.1);
+                border-color: rgba(120, 80, 255, 0.3);
+                transform: translateX(4px);
+                color: #fff;
+            }
+
+            .nav-link .arrow {
+                font-size: 1.2rem;
+                opacity: 0.4;
+                transition: all 0.3s;
+            }
+
+            .nav-link:hover .arrow {
+                opacity: 1;
+                transform: translateX(4px);
+            }
+
+            .nav-link .icon {
+                font-size: 1.2rem;
+                margin-right: 12px;
+            }
+
+            .nav-link-content {
+                display: flex;
+                align-items: center;
+            }
+
+            /* Footer */
+            .footer {
+                margin-top: 2rem;
+                font-size: 0.8rem;
+                color: rgba(255, 255, 255, 0.25);
+            }
+
+            /* Responsive */
+            @media (max-width: 640px) {
+                .hero-card {
+                    padding: 2rem 1.5rem;
+                }
+                .title {
+                    font-size: 1.8rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bg-gradient"></div>
+        <div class="particles" id="particles"></div>
+
+        <div class="container">
+            <div class="hero-card">
+                <div class="profile-wrapper">
+                    <div class="profile-ring"></div>
+                    <img
+                        src="Image/z6022863364305_0a3c982c4922169190c8c345e61531a1.jpg"
+                        alt="Huy Nguyen"
+                        class="profile-img"
+                        title="LiveFB HuyNguyen"
+                    />
+                </div>
+
+                <div class="badge">K24411TE Talent</div>
+
+                <h1 class="title">Hey! Welcome</h1>
+                <p class="subtitle">
+                    Khám phá các bài tập Web Development từ khóa học K24411TE.
+                    Mỗi bài tập thể hiện một kỹ năng HTML, CSS & JavaScript khác
+                    nhau.
+                </p>
+
+                <nav class="nav-links" id="navLinks">
+                    <a
+                        href="../Ex14/Resume.html"
+                        class="nav-link"
+                        id="nav-ex14"
+                    >
+                        <span class="nav-link-content">
+                            <span class="icon">📄</span> Ex14 — Resume
+                        </span>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a
+                        href="../Ex15/FirstMovement.html"
+                        class="nav-link"
+                        id="nav-ex15"
+                    >
+                        <span class="nav-link-content">
+                            <span class="icon">🎵</span> Ex15 — Beethoven's
+                            Ninth
+                        </span>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="../Ex16/Euler.html" class="nav-link" id="nav-ex16">
+                        <span class="nav-link-content">
+                            <span class="icon">🧮</span> Ex16 — Leonhard Euler
+                        </span>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a
+                        href="../Ex17/Chester.html"
+                        class="nav-link"
+                        id="nav-ex17"
+                    >
+                        <span class="nav-link-content">
+                            <span class="icon">🐕</span> Ex17 — Chester the Dog
+                        </span>
+                        <span class="arrow">→</span>
+                    </a>
+                </nav>
+
+                <p class="footer">© 2026 K24411TE — Basic Web Development</p>
+            </div>
+        </div>
+
+        <script>
+            // Create floating particles
+            const particlesContainer = document.getElementById("particles");
+            const particleCount = 30;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement("div");
+                particle.classList.add("particle");
+                particle.style.left = Math.random() * 100 + "%";
+                particle.style.animationDuration = Math.random() * 10 + 8 + "s";
+                particle.style.animationDelay = Math.random() * 10 + "s";
+                particle.style.width = Math.random() * 3 + 2 + "px";
+                particle.style.height = particle.style.width;
+
+                const colors = [
+                    "rgba(120, 80, 255, 0.4)",
+                    "rgba(255, 100, 150, 0.4)",
+                    "rgba(60, 200, 255, 0.4)",
+                ];
+                particle.style.background =
+                    colors[Math.floor(Math.random() * colors.length)];
+
+                particlesContainer.appendChild(particle);
+            }
+
+            // Stagger nav link animations
+            const navLinks = document.querySelectorAll(".nav-link");
+            navLinks.forEach((link, i) => {
+                link.style.opacity = "0";
+                link.style.transform = "translateY(20px)";
+                link.style.transition =
+                    "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)";
+                setTimeout(
+                    () => {
+                        link.style.opacity = "1";
+                        link.style.transform = "translateY(0)";
+                    },
+                    800 + i * 120,
+                );
+            });
+        </script>
+    </body>
+</html>
