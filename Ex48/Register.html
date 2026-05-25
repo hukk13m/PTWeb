@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            @import url(CSS/mainstyle.css);
+        </style>
+    </head>
+    <body>
+        <h1><img src="ex48/images/Jackson.gif" alt="" /></h1>
+        <br />
+        <h1>Register Form</h1>
+        <form action="">
+            <table
+                border="0"
+                cellpadding="10"
+                cellspacing="0"
+                align="center"
+                width="900px"
+            >
+                <caption>
+                    Register your Jackson Electronic Product here
+                </caption>
+                <tr>
+                    <td width="200px">
+                        <label for="Firstname">First Name</label>
+                    </td>
+                    <td>
+                        <input type="text" name="Firstname" id="Firstname" />
+                        <label for="Lastname">Lastname:</label>
+                        <input type="text" name="Lastname" id="Lastname" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="address1">Address #1:</label></td>
+                    <td>
+                        <input type="text" name="address1" id="address1" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="address2">Address #2:</label></td>
+                    <td>
+                        <input type="text" name="address2" id="address2" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="city">City</label></td>
+                    <td>
+                        <input type="text" name="city" id="city" />
+                        <label for="state">State</label>
+                        <input type="text" name="state" id="state" />
+                        <label for="zip">Zip</label>
+                        <input type="text" name="zip" id="zip" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="country">Country</label></td>
+                    <td>
+                        <input type="text" name="country" id="country" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <hr />
+        <form action="">
+            <table
+                border="0"
+                cellpadding="10"
+                cellspacing="0"
+                align="center"
+                width="900px"
+            >
+                <tr>
+                    <td width="200px"><label for="Product">Product:</label></td>
+                    <td>
+                        <select name="Product" id="Product">
+                            <option value="ScanMaster">ScanMaster</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="datepurchased">Date Purchased:</label></td>
+                    <td>
+                        <input
+                            type="date"
+                            name="datepurchased"
+                            id="datepurchased"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="seri">Serial #:</label></td>
+                    <td><input type="text" name="seri" id="seri" /></td>
+                </tr>
+                <tr>
+                    <td>Used for:</td>
+                    <td>
+                        <input type="radio" name="Home" id="Home" /><label
+                            for="Home"
+                            >Home</label
+                        >
+                    </td>
+                    <td>
+                        <input type="radio" name="edu" id="edu" /><label
+                            for="edu"
+                            >Education Instutition</label
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input
+                            type="radio"
+                            name="Business"
+                            id="Business"
+                        /><label for="Business">Business</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="Other" id="Other" /><label
+                            for="Other"
+                            >Other</label
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input
+                            type="radio"
+                            name="Government"
+                            id="Government"
+                        /><label for="Government">Government</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>System (check all that apply)</td>
+                    <td>
+                        <input
+                            type="checkbox"
+                            name="window"
+                            id="window"
+                        /><label for="window">Windows</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="UNIX" id="UNIX" /><label
+                            for="UNIX"
+                            >UNIX</label
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" name="ma" id="ma" /><label
+                            for="ma"
+                            >Macintosh</label
+                        >
+                    </td>
+                    <td>
+                        <input type="checkbox" name="Other" id="Other" /><label
+                            for="Other"
+                            >Other</label
+                        >
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <hr />
+        <form action="">
+            <table
+                border="0"
+                cellpadding="10"
+                cellspacing="0"
+                align="center"
+                width="900px"
+            >
+                <tr>
+                    <td width="200px" valign="top">
+                        <label for="Comments">Comments?</label>
+                    </td>
+                    <td>
+                        <input
+                            type="text"
+                            name="Comments"
+                            id="Comments"
+                            style="width: 600px; height: 300px"
+                        />
+                    </td>
+                </tr>
+            </table>
+            <div class="btn-group" align="center">
+                <input type="submit" value="Click to register" />
+                <input type="reset" value="Click to cancel" />
+            </div>
+        </form>
+    </body>
+</html>
