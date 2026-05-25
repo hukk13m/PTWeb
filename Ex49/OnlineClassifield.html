@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            @import url(CSS/style.css);
+        </style>
+    </head>
+    <body>
+        <h1>Online Classifield Search Form</h1>
+        <hr />
+        <ol>
+            <li>
+                <h4>Search for a classified in the following sections</h4>
+                <table>
+                    <tr>
+                        <td>
+                            <input
+                                type="radio"
+                                name="Employment"
+                                id="Employment"
+                            />Employment
+                        </td>
+                        <td>
+                            <input
+                                type="radio"
+                                name="Personal"
+                                id="Personal"
+                            />Personal
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input
+                                type="radio"
+                                name="For Sale"
+                                id="For Sale"
+                            />For Sale
+                        </td>
+                        <td>
+                            <input
+                                type="radio"
+                                name="Miscellaneous"
+                                id="Miscellaneous"
+                            />Miscellaneous
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input
+                                type="radio"
+                                name="Housing"
+                                id="Housing"
+                            />Housing
+                        </td>
+                        <td>
+                            <input
+                                type="radio"
+                                name="All of the above"
+                                id="All of the above"
+                            />All of the above
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <h4>Search the following publications</h4>
+                <table>
+                    <tr>
+                        <td>
+                            <input
+                                type="checkbox"
+                                name="Midwest"
+                                id="Midwest"
+                            /><label for="Midwest">Midwest times</label>
+                        </td>
+                        <td>
+                            <input
+                                type="checkbox"
+                                name="Modern News"
+                                id="Modern News"
+                            /><label for="Modern News">Modern News</label>
+                        </td>
+                        <td>
+                            <input
+                                type="checkbox"
+                                name="Employment Today"
+                                id="Employment Today"
+                            /><label for="Employment Today"
+                                >Employment Today</label
+                            >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input
+                                type="checkbox"
+                                name="Great Lake Classifield"
+                                id="Great Lake Classifield"
+                            /><label for="Great Lake Classifield"
+                                >Great Lake Classifield</label
+                            >
+                        </td>
+                        <td>
+                            <input
+                                type="checkbox"
+                                name="Middleton Daily"
+                                id="Middleton Daily"
+                            /><label for="Middleton Daily"
+                                >Middleton Daily</label
+                            >
+                        </td>
+                        <td>
+                            <input
+                                type="checkbox"
+                                name="Cashtown Daily News"
+                                id="Cashtown Daily News"
+                            /><label for="Cashtown Daily News"
+                                >Cashtown Daily News</label
+                            >
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <h4>From to <input type="date" /> to <input type="date" /></h4>
+            </li>
+            <li>
+                <h4>Enter a few keywords to describe the classified</h4>
+                <input type="text" style="width: 500px" />
+            </li>
+            <li>
+                <h4>Click one of the options below</h4>
+                <div>
+                    <a href="www.uel.edu.vn" target="_blank"
+                        ><img src="ex49/Search.gif"
+                    /></a>
+                    <a href="www.uel.edu.vn" target="_blank"
+                        ><img src="ex49/Help.gif"
+                    /></a>
+                    <a
+                        href="###"
+                        onclick="
+                            document
+                                .querySelectorAll('input')
+                                .forEach((e) =>
+                                    e.type === 'radio' || e.type === 'checkbox'
+                                        ? (e.checked = false)
+                                        : (e.value = ''),
+                                );
+                            return false;
+                        "
+                        target="_blank"
+                        ><img src="ex49/Cancel.gif"
+                    /></a>
+                </div>
+            </li>
+        </ol>
+    </body>
+</html>
