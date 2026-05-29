@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            @import url(CSS/mainstyle.css);
+        </style>
+    </head>
+    <body>
+        <div><img src="Images/Logo.gif" alt="" /></div>
+        <h1>Newborn Registration</h1>
+        <form action="">
+            <p>Date: <input type="date" /></p>
+            <ol>
+                <li>
+                    <label for="Infant First">Infant's first name:</label>
+                    <input type="text" name="Infant First" id="Infant First" />
+                    <label for="Infant Last">Last name</label>
+                    <input type="text" name="Infant Last" id="Infant Last" />
+                </li>
+                <br />
+                <li>
+                    <label for="Record">Medical Record #: </label
+                    ><input type="text" name="Record" id="Record" />
+                </li>
+                <br />
+                <li>
+                    <label for="DoB">Date of Birth: </label
+                    ><input type="date" name="DoB" id="DoB" />
+                </li>
+                <br />
+                <li>
+                    <label for="Weight">Birth Weight: </label
+                    ><input type="number" name="Weight" id="Weight" />
+                </li>
+                <br />
+                <li>
+                    <label for="APGAR">APGAR Score: </label
+                    ><input type="number" name="APGAR" id="APGAR" />
+                </li>
+                <br />
+                <li>
+                    <label for="Mother First">Mother's first name:</label>
+                    <input type="text" name="Mother First" id="Mother First" />
+                    <label for="Mother Last">Last name</label>
+                    <input type="text" name="Mother Last" id="Mother Last" />
+                </li>
+                <br />
+                <li>
+                    <label for="Father First">Father's first name:</label>
+                    <input type="text" name="Father First" id="Father First" />
+                    <label for="Father Last">Last name</label>
+                    <input type="text" name="Father Last" id="Father Last" />
+                </li>
+                <br />
+                <li>
+                    <label for="Physician"
+                        >Physician (check all the apply)</label
+                    >
+                    <select name="Physician" id="Physician" size="4">
+                        <option value="Warren">Dr.Warren Albert</option>
+                        <option value="Maria">Dr.Maria Alvarez</option>
+                        <option value="Karen">Dr.Karen Brinkman</option>
+                        <option value="Michael">Dr.Michael Kerry</option>
+                    </select>
+                </li>
+                <br />
+                <div class="button">
+                    <input
+                        type="submit"
+                        name="submit"
+                        id="submit"
+                        value="Register"
+                    />
+                    <input
+                        type="reset"
+                        name="Cancel"
+                        id="Cancel"
+                        value="Cancel"
+                    />
+                </div>
+            </ol>
+        </form>
+    </body>
+</html>

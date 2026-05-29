@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(31, 170, 150);
+}
+h1 {
+    text-align: center;
+    color: white;
+}
+li,
+p {
+    color: white;
+}
+div {
+    text-align: center;
+}
