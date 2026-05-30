@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Process Login</title>
+        <style>
+            body {
+                margin: 0;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: Arial, sans-serif;
+            }
+
+            .result-box {
+                border: 1px solid black;
+                padding: 30px 40px;
+                text-align: center;
+            }
+
+            .back-btn {
+                margin-top: 20px;
+                padding: 8px 20px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="result-box">
+            <h2>Thông tin người liên hệ</h2>
+            <p>Full name: <strong id="show-fullname"></strong></p>
+            <p>Email: <strong id="show-email"></strong></p>
+            <p>Send to <strong id="show-sendto"></strong></p>
+            <p>Title: <strong id="show-title"></strong></p>
+            <p>Content: <strong id="show-content"></strong></p>
+
+            <br />
+            <button class="back-btn" onclick="history.back()">
+                ← Quay lại trang chủ
+            </button>
+        </div>
+
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            const fullname = params.get("Full Name");
+            const email = params.get("Email");
+            const sendto = params.get("Send to");
+            const title = params.get("Title");
+            const content = params.get("Content");
+
+            // Map code (E, N, B, W, D) to friendly department names
+            const sendToNames = {
+                "E": "Editorial Board",
+                "N": "News Department",
+                "B": "Boards of Perspective",
+                "W": "World Board",
+                "D": "Business Department"
+            };
+
+            document.getElementById("show-fullname").textContent =
+                fullname || "Không có dữ liệu";
+            document.getElementById("show-email").textContent =
+                email || "Không có dữ liệu";
+            document.getElementById("show-sendto").textContent =
+                sendToNames[sendto] || sendto || "Không có dữ liệu";
+            document.getElementById("show-title").textContent =
+                title || "Không có dữ liệu";
+            document.getElementById("show-content").textContent =
+                content || "Không có dữ liệu";
+        </script>
+    </body>
+</html>
