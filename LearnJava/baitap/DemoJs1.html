@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script type="text/javascript">
+            function XuLyCong(a, b) {
+                ketqua = eval(a) + eval(b);
+                alert(ketqua);
+            }
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>Hệ số a:</td>
+                <td>
+                    <input type="text" id="hsa" />
+                </td>
+            </tr>
+            <tr>
+                <td>Hệ số b:</td>
+                <td><input type="text" id="hsb" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input
+                        type="button"
+                        value="Cong2so"
+                        onclick="XuLyCong(hsa.value, hsb.value)"
+                    />
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
