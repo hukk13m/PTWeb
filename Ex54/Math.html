@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function getNum() {
+                var a = Number(Calculator.a.value) || 0;
+                var b = Number(Calculator.b.value) || 0;
+                var c = Number(Calculator.c.value) || 0;
+                return { a, b, c };
+            }
+            function showResult(value) {
+                document.Calculator.Result.value = value;
+            }
+            function max() {
+                var { a, b, c } = getNum();
+                var i = a;
+                if (b > i) {
+                    i = b;
+                }
+                if (c > i) {
+                    i = c;
+                }
+                showResult(i);
+            }
+            function min() {
+                var { a, b, c } = getNum();
+                var i = a;
+                if (b < i) {
+                    i = b;
+                }
+                if (c < i) {
+                    i = c;
+                }
+                showResult(i);
+            }
+            function sin() {
+                var { a, b, c } = getNum();
+                var i = b / c;
+                if (i < -1 || i > 1) {
+                    i = c / b;
+                }
+                showResult(i);
+            }
+            function cos() {
+                var { a, b, c } = getNum();
+                var i = a / c;
+                if (i < -1 || i > 1) {
+                    i = c / a;
+                }
+                showResult(i);
+            }
+            function mu() {
+                var { a, b, c } = getNum();
+                var i = a ** b;
+                showResult(i);
+            }
+        </script>
+    </head>
+    <body>
+        <form action="" name="Calculator">
+            <table border="1" cellspacing="10" cellpadding="10">
+                <caption>
+                    Calculator
+                </caption>
+                <tr>
+                    <td><label for="a">a:</label></td>
+                    <td><input type="number" name="a" id="a" /></td>
+                </tr>
+                <tr>
+                    <td><label for="b">b:</label></td>
+                    <td><input type="number" name="b" id="b" /></td>
+                </tr>
+                <tr>
+                    <td><label for="c">c:</label></td>
+                    <td><input type="number" name="c" id="c" /></td>
+                </tr>
+                <tr>
+                    <td>Result:</td>
+                    <td>
+                        <input
+                            type="number"
+                            name="Result"
+                            id="Result"
+                            readonly
+                        />
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <div id="button">
+                <button type="button" onclick="max()">MAX</button>
+                <button type="button" onclick="min()">MIN</button>
+                <button type="button" onclick="sin()">sin(a)</button>
+                <button type="button" onclick="cos()">cos(a)</button>
+                <button type="button" onclick="mu()">a^b</button>
+                <br />
+            </div>
+        </form>
+    </body>
+</html>
