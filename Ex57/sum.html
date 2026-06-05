@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            form {
+                width: fit-content;
+            }
+            th,
+            td {
+                text-align: center;
+            }
+            div {
+                display: flexbox;
+                text-align: right;
+            }
+            button {
+                background-color: orange;
+                color: white;
+                width: 100px;
+                height: 50px;
+            }
+        </style>
+        <script>
+            function getNum() {
+                var a = Info.Qty1.value || 0;
+                var b = Info.Qty2.value || 0;
+                var c = Info.Qty3.value || 0;
+                return { a, b, c };
+            }
+            function sum1() {
+                var { a } = getNum();
+                var x;
+                if (a < 0) {
+                    Info.Itemtable1.value = "Lỗi tham số";
+                } else {
+                    x = a * 19.95;
+                    Info.Itemtable1.value = x + "$";
+                }
+            }
+            function sum2() {
+                var { b } = getNum();
+                var y;
+                if (b < 0) {
+                    Info.Itemtable2.value = "Lỗi tham số";
+                } else {
+                    y = b * 29.95;
+                    Info.Itemtable2.value = y + "$";
+                }
+            }
+            function sum3() {
+                var { c } = getNum();
+                var z;
+                if (c < 0) {
+                    Info.Itemtable3.value = "Lỗi tham số";
+                } else {
+                    z = c * 29.95;
+                    Info.Itemtable3.value = z + "$";
+                }
+            }
+            function Total() {
+                var t1 = parseFloat(Info.Itemtable1.value) || 0;
+                var t2 = parseFloat(Info.Itemtable2.value) || 0;
+                var t3 = parseFloat(Info.Itemtable3.value) || 0;
+
+                var tong = t1 + t2 + t3;
+                Info.Total1.value = tong.toFixed(2) + "$";
+            }
+        </script>
+    </head>
+    <body>
+        <form action="" name="Info" border="1">
+            <table cellpadding="0" cellspacing="10">
+                <thead>
+                    <th>Part Number</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Item Table</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>C112</td>
+                        <td>Mouse</td>
+                        <td>19.95$</td>
+                        <td>
+                            <input
+                                type="number"
+                                id="Qty1"
+                                oninput="sum1()"
+                                min="0"
+                            />
+                        </td>
+                        <td>
+                            <input type="text" id="Itemtable1" readonly />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>B124</td>
+                        <td>Keyboard US</td>
+                        <td>29.95$</td>
+                        <td>
+                            <input
+                                type="number"
+                                id="Qty2"
+                                oninput="sum2()"
+                                min="0"
+                            />
+                        </td>
+                        <td>
+                            <input type="text" id="Itemtable2" readonly />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>U125</td>
+                        <td>USB King Max</td>
+                        <td>39.95$</td>
+                        <td>
+                            <input
+                                type="number"
+                                id="Qty3"
+                                oninput="sum3()"
+                                min="0"
+                            />
+                        </td>
+                        <td>
+                            <input type="text" id="Itemtable3" readonly />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr />
+            <div id="Calculate">
+                <label for="Total1">Total:</label>
+                <input type="text" id="Total1" name="Total1" readonly />
+                <br />
+
+                <button type="button" onclick="Total()">SUM</button>
+            </div>
+        </form>
+    </body>
+</html>
