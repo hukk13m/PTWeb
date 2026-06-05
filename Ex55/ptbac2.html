@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            caption {
+                background-color: rgb(201, 238, 150);
+            }
+            td {
+                text-align: center;
+            }
+        </style>
+        <script>
+            function getNum() {
+                var a = ptbac2.a.value || 0;
+                var b = ptbac2.b.value || 0;
+                var c = ptbac2.c.value || 0;
+                return { a, b, c };
+            }
+            function showResult(value) {
+                ptbac2.Result.value = value;
+            }
+            function Solve() {
+                var { a, b, c } = getNum();
+                var i, x1, x2;
+
+                if (a == 0) {
+                    if (b == 0) {
+                        if (c == 0) {
+                            showResult("Phương trình vô số nghiệm");
+                        } else {
+                            showResult("Phương trình vô nghiệm");
+                        }
+                    } else {
+                        x1 = -c / b;
+                        showResult("x=" + x1);
+                    }
+                    return;
+                } else i = b * b - 4 * a * c;
+                if (i > 0) {
+                    x1 = (-b - Math.sqrt(i)) / (2 * a);
+                    x2 = (-b + Math.sqrt(i)) / (2 * a);
+                    showResult("x1 = " + x1 + ", x2 = " + x2);
+                } else if (i == 0) {
+                    x1 = -b / (2 * a);
+                    showResult("x1 = x2 = " + x1);
+                } else {
+                    showResult("Phương trình vô nghiệm");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form action="" name="ptbac2">
+            <table border="1" cellpadding="0" cellspacing="10">
+                <caption>
+                    The quadractic equation
+                </caption>
+                <tr>
+                    <td><label for="a">a:</label></td>
+                    <td><input type="number" id="a" name="a" /></td>
+                </tr>
+                <tr>
+                    <td><label for="b">b:</label></td>
+                    <td><input type="number" id="b" name="b" /></td>
+                </tr>
+                <tr>
+                    <td><label for="c">c:</label></td>
+                    <td><input type="number" id="c" name="c" /></td>
+                </tr>
+                <tr>
+                    <td>Result:</td>
+                    <td>
+                        <input
+                            type="text"
+                            name="Result"
+                            id="Result"
+                            style="color: red"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div id="button">
+                            <button type="button" onclick="Solve()">
+                                Find solution
+                            </button>
+                            <button type="reset">Clear</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
