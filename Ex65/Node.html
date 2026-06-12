@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            @import url(css/main.css);
+        </style>
+    </head>
+    <body>
+        <div>
+            <button type="button" onclick="addNode()">Add Node</button>
+            <label for="inputContent">Content</label>
+            <input type="text" id="inputContent" />
+            <label for="inputPosition">Position</label>
+            <input type="number" id="inputPosition" />
+        </div>
+        <br />
+        <div>
+            <button type="button" onclick="removeNode()">Remove Node</button>
+            <label for="removePosition">Position</label>
+            <input type="number" id="removePosition" />
+        </div>
+        <br />
+        <div>
+            <button type="button" onclick="modifyNode()">Modify Node</button>
+            <label for="modifyContent">New Content</label>
+            <input type="text" id="modifyContent" />
+            <label for="modifyPosition">Position</label>
+            <input type="number" id="modifyPosition" />
+        </div>
+        <br />
+        <div>
+            <strong>Web Node</strong>
+            <ul id="WebNodeList">
+                <li>Data base</li>
+                <li>Web1</li>
+                <li>Web2</li>
+            </ul>
+        </div>
+        <script src="js/mainjs.js"></script>
+    </body>
+</html>
