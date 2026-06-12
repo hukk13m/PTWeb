@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            @import url(css/main.css);
+        </style>
+        <script src="js/member.js"></script>
+        <script src="js/mainjs.js"></script>
+    </head>
+    <body>
+        <h1>Member Registration</h1>
+        <hr />
+        <form action="" name="memberInfo">
+            <table>
+                <tr>
+                    <td><label for="Name">Name(*)</label></td>
+                    <td><input type="text" name="Name" id="Name" /></td>
+                </tr>
+                <tr>
+                    <td>Birthday(*)</td>
+                    <td>
+                        Day:
+                        <select name="Day" id="birth_date"></select>
+                        Month:
+                        <select name="Month" id="birth_month"></select>
+                        Year:
+                        <select name="Year" id="birth_year"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender(*)</td>
+                    <td>
+                        <input
+                            type="radio"
+                            id="gender_male"
+                            name="Gender"
+                            value="male"
+                            checked
+                        />
+                        <label for="gender_male">Man</label>
+
+                        <input
+                            type="radio"
+                            id="gender_female"
+                            name="Gender"
+                            value="female"
+                        />
+                        <label for="gender_female">Woman</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="Email">Email(*)</label></td>
+                    <td><input type="email" name="Email" id="Email" /></td>
+                </tr>
+            </table>
+            <br />
+            <p>Your favourite:</p>
+            <input
+                type="checkbox"
+                id="shopping"
+                name="shopping"
+                value="Shopping"
+            />
+            <label for="shopping">Shopping</label><br />
+            <input
+                type="checkbox"
+                id="tourism"
+                name="tourism"
+                value="Tourism"
+            />
+            <label for="tourism">Tourism</label><br />
+            <input type="checkbox" id="chat" name="chat" value="Chat" />
+            <label for="chat">Chat</label><br />
+            <input type="checkbox" id="read" name="read" value="Read" />
+            <label for="read">Read a book</label><br />
+            <input type="checkbox" id="music" name="music" value="Music" />
+            <label for="music">Listen to music</label><br />
+            <p>Your favourite color:</p>
+            <input
+                type="radio"
+                id="blue"
+                name="color"
+                value="Blue"
+                checked
+            /><label for="blue" style="background-color: rgb(36, 36, 237)"
+                >Blue</label
+            ><br />
+            <input type="radio" id="red" name="color" value="Red" /><label
+                for="red"
+                style="background-color: red"
+                >Red</label
+            ><br /><input
+                type="radio"
+                id="Yellow"
+                name="color"
+                value="Yellow"
+            /><label for="Yellow" style="background-color: Yellow">Yellow</label
+            ><br /><input
+                type="radio"
+                id="green"
+                name="color"
+                value="Green"
+            /><label for="green" style="background-color: green">Green</label
+            ><br /><input
+                type="radio"
+                id="violet"
+                name="color"
+                value="Violet"
+            /><label for="violet" style="background-color: violet">Violet</label
+            ><br />
+            <br />
+            <div class="button">
+                <button type="button" onclick="create_new_emp()">
+                    Sign up
+                </button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+        <br />
+        <table id="Result" border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Birthday</th>
+                    <th>Hobbies</th>
+                    <th>Color</th>
+                </tr>
+            </thead>
+            <tbody id="bodyemp"></tbody>
+        </table>
+        <script>
+            {
+                load_data(members, document.getElementById("bodyemp"));
+            }
+            function create_birthday_control() {
+                var birth_date = document.getElementById("birth_date");
+                for (var i = 1; i <= 31; i++) {
+                    birth_date.innerHTML +=
+                        "<option value='" + i + "'>" + i + "</option>";
+                }
+                var birth_month = document.getElementById("birth_month");
+                for (var i = 1; i <= 12; i++) {
+                    birth_month.innerHTML +=
+                        "<option value='" + i + "'>" + i + "</option>";
+                }
+                var birth_year = document.getElementById("birth_year");
+                for (var i = 1965; i <= 2026; i++) {
+                    birth_year.innerHTML +=
+                        "<option value='" + i + "'>" + i + "</option>";
+                }
+            }
+            create_birthday_control();
+        </script>
+    </body>
+</html>

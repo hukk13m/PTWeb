@@ -1,0 +1,8 @@
+#Result thead {
+    border: 1px solid black;
+    background-color: rgb(86, 86, 239);
+}
+
+tbody tr:hover {
+    background-color: yellow;
+}
