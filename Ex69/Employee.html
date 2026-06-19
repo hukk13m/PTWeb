@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            @import url(css/maincss.css);
+        </style>
+        <script src="js/mainjs.js"></script>
+    </head>
+    <body>
+        <div>
+            Title:
+            <td colspan="2">
+                <select name="Role" id="Role">
+                    <option value="Architect">Architect</option>
+                    <option value="Engineer">Engineer</option>
+                    <option value="Teacher">Teacher</option>
+                </select>
+            </td>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Role</th>
+                    <th>Employee Name</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody id="body_employee"></tbody>
+        </table>
+        <script>
+            body_employee = document.getElementById("body_employee");
+            dataset_path = "dataset/employee.xml";
+            roleSelect = document.getElementById("Role");
+            load_customers_from_external_xml(dataset_path, body_employee);
+            roleSelect.addEventListener("change", function () {
+                var selectedRole = this.value;
+                load_customers_from_external_xml(
+                    dataset_path,
+                    body_employee,
+                    selectedRole,
+                );
+            });
+        </script>
+    </body>
+</html>

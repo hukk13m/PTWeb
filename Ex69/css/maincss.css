@@ -1,0 +1,15 @@
+table,
+tr,
+thead,
+th,
+td {
+    border: 1px;
+    border-style: solid;
+}
+tbody tr:hover {
+    background-color: yellow;
+}
+thead {
+    background-color: rgb(2, 164, 2);
+    color: white;
+}
