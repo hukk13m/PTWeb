@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            @import url(css/maincss.css);
+        </style>
+        <script src="js/mainjs.js"></script>
+    </head>
+    <div>
+        <button
+            onclick="load_catalog_from_external_xml(dataset_path, body_catalog)"
+        >
+            Get my CD collection
+        </button>
+    </div>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Artist</th>
+                    <th>Company</th>
+                    <th>Country</th>
+                    <th>Price</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody id="body_catalog"></tbody>
+        </table>
+        <script>
+            body_catalog = document.getElementById("body_catalog");
+            dataset_path = "ex68/cd_catalog.xml";
+        </script>
+    </body>
+</html>

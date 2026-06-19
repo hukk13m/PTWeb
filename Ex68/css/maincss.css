@@ -1,0 +1,16 @@
+table,
+caption,
+tr,
+th,
+td {
+    border: 1px;
+    border-style: solid;
+}
+tbody tr:hover {
+    background-color: yellow;
+    cursor: pointer;
+}
+button {
+    background-color: gray;
+    margin-bottom: 2%;
+}
