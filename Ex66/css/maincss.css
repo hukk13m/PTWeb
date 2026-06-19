@@ -1,0 +1,20 @@
+caption {
+    background-color: rgb(171, 235, 171);
+}
+table,
+caption,
+tr,
+th,
+td {
+    border: 1px;
+    border-style: solid;
+}
+tbody tr :hover {
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+
+table {
+    width: 200px;
+}

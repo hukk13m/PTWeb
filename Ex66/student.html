@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            @import url(css/maincss.css);
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption>
+                Student Information
+            </caption>
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Birthday</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody id="body_student"></tbody>
+        </table>
+        <script src="js/mainjs.js"></script>
+        <script>
+            var body_student = document.getElementById("body_student");
+            var dataset_path = "dataset/information.xml";
+            load_customers_from_external_xml(dataset_path, body_student);
+        </script>
+    </body>
+</html>
