@@ -1,0 +1,19 @@
+table,
+caption,
+tr,
+th,
+td {
+    border: 1px;
+    border-style: solid;
+}
+tbody tr:hover {
+    background-color: yellow;
+    cursor: pointer;
+}
+thead {
+    background-color: green;
+    color: white;
+}
+caption {
+    background-color: yellow;
+}
